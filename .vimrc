@@ -114,9 +114,6 @@ set laststatus=2
 " Disable markdown folding
 let g:vim_markdown_folding_disabled = 1
 
-" Disable IMI upon leaving insert mode.
-set imi=1
-
 " Ignore for ctrlp
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|log$\|tmp$\|__pycache__$',
