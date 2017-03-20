@@ -1,0 +1,9 @@
+[url "git@github.com:/deepbio"]
+	insteadOf = https://github.com/deepbio
+[url "git@github.com:/juneoh"]
+	insteadOf = https://github.com/juneoh
+[core]
+	editor = vi
+[user]
+	email = me@juneoh.com
+	name = June Oh
