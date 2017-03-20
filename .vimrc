@@ -58,6 +58,17 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+" Default indentation for full stack development
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+
+" Markdown readability
+au BufNewFile,BufRead *.md
+    \ set textwidth=80
+
 " PEP 8 Indentation
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -67,14 +78,6 @@ au BufNewFile,BufRead *.py
     \ set expandtab |
     \ set autoindent |
     \ set fileformat=unix
-
-" Full stack indentation
-au BufNewFile,BufRead *.js,*.html,*.css,*.md,*.scss,*.R
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2 |
-    \ set expandtab |
-    \ set autoindent
 
 " UTF-8
 set encoding=utf-8
@@ -147,3 +150,9 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+
+" Customize Promptline
+let g:promptline_preset = {
+  \'b' : [ promptline#slices#user() ],
+  \'c' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
+  \'y' : [ promptline#slices#vcs_branch() ]}
