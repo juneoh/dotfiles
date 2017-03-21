@@ -132,17 +132,6 @@ let NERDTreeShowHidden=1
 " Enable Powerline fonts
 let g:airline_powerline_fonts = 1
 
-" Map buffer keys
-map 1 :buffer1<CR>
-map 2 :buffer2<CR>
-map 3 :buffer3<CR>
-map 4 :buffer4<CR>
-map 5 :buffer5<CR>
-map 6 :buffer6<CR>
-map 7 :buffer7<CR>
-map 8 :buffer8<CR>
-map 9 :buffer9<CR>
-
 " Disable whitespace error section
 let g:airline#extensions#whitespace#enabled = 0
 
@@ -150,6 +139,19 @@ let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#fnamecollapse = 1
+nmap 1 <Plug>AirlineSelectTab1
+nmap 2 <Plug>AirlineSelectTab2
+nmap 3 <Plug>AirlineSelectTab3
+nmap 4 <Plug>AirlineSelectTab4
+nmap 5 <Plug>AirlineSelectTab5
+nmap 6 <Plug>AirlineSelectTab6
+nmap 7 <Plug>AirlineSelectTab7
+nmap 8 <Plug>AirlineSelectTab8
+nmap 9 <Plug>AirlineSelectTab9
+nmap leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " Customize Promptline
 let g:promptline_preset = {
