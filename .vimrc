@@ -116,7 +116,7 @@ set number
 set laststatus=2
 
 " Enable background transparency.
-"hi Normal ctermbg=none
+hi Normal ctermbg=none
 
 " Disable markdown folding
 let g:vim_markdown_folding_disabled = 1
