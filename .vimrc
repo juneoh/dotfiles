@@ -42,6 +42,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'https://github.com/pangloss/vim-javascript.git'
 " Promptline
 Plugin 'edkolev/promptline.vim'
+" HTML5 indentation and syntax
+Plugin 'othree/html5.vim'
+" SCSS syntax support
+Plugin 'cakebaker/scss-syntax.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
