@@ -101,3 +101,6 @@ prompt pure
 #if command -v tmux>/dev/null; then
 #  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
 #fi
+
+# Set dircolors
+eval "$(dircolors ~/.dircolors)";
