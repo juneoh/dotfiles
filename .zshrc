@@ -104,3 +104,5 @@ prompt pure
 
 # Set dircolors
 eval "$(dircolors ~/.dircolors)";
+
+alias docker="nvidia-docker"
