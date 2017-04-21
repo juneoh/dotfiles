@@ -106,5 +106,5 @@ prompt pure
 eval "$(dircolors ~/.dircolors)";
 
 # Aliases
-alias xcopy = "xclip -selection clipboard"
+alias xcopy="xclip -selection clipboard"
 alias docker="nvidia-docker"
