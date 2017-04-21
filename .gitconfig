@@ -7,3 +7,5 @@
 [user]
 	email = me@juneoh.com
 	name = June Oh
+[push]
+	default = simple
