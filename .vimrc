@@ -162,3 +162,13 @@ let g:promptline_preset = {
   \'b' : [ promptline#slices#user() ],
   \'c' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
   \'y' : [ promptline#slices#vcs_branch() ]}
+
+" Easier split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" More natural split opening
+set splitbelow
+set splitright
