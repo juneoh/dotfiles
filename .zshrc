@@ -108,3 +108,10 @@ eval "$(dircolors ~/.dircolors)";
 # Aliases
 alias xcopy="xclip -selection clipboard"
 alias docker="nvidia-docker"
+
+onChange() {
+  while inotifywait -e close_write,moved_to,create .
+  do
+    eval $1
+  done
+}
