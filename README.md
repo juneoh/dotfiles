@@ -2,9 +2,6 @@
 
 Personal environment settings for Ubuntu.
 
-- terminal: [Hyper](https://hyper.is/)
-  - color scheme: [hyper-snazzy](https://github.com/sindresorhus/hyper-snazzy)
-  - fonts: [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline)
 - terminal multiplexer: tmux
   - color scheme: custom adaptation of hyper-snazzy
 - shell: zsh
@@ -13,6 +10,9 @@ Personal environment settings for Ubuntu.
 - editor: VIM
   - plugin manager: [Vundle](https://github.com/VundleVim/Vundle.vim)
   - plugins: refer to `.vimrc` file.
+- recommended
+  - color scheme: [hyper-snazzy](https://github.com/sindresorhus/hyper-snazzy)
+  - fonts: [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline)
 
 ## Requirements
 
@@ -21,7 +21,7 @@ Personal environment settings for Ubuntu.
 ```
 sudo apt-get update
 sudo apt-get install tmux vi git zsh
-$ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 ### 2. Install Vundle
@@ -29,9 +29,6 @@ $ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools
 ```
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
-
-### 3. Install [Hyper](https://hyper.is/)
-
 
 ## Installation
 
@@ -56,17 +53,11 @@ cd
 git init
 git commit -m --allow-empty "Initial commit"
 git remote add origin https://github.com/juneoh/home
-git pull remote origin
+git pull origin master
 git reset --hard origin/master
 cd .zsh-pure
 git submodule init
 git submodule update
-```
-
-### 3. Update font cache
-
-```
-fc-cache -vf ~/.fonts
 ```
 
 ### 4. Install Vundle plugins
