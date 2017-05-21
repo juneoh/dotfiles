@@ -48,6 +48,8 @@ Plugin 'othree/html5.vim'
 Plugin 'cakebaker/scss-syntax.vim'
 " vim-tmux navigation keys
 Plugin 'christoomey/vim-tmux-navigator'
+" Vim-tmux integration
+Plugin 'benmills/vimux'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
