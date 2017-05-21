@@ -46,6 +46,8 @@ Plugin 'edkolev/promptline.vim'
 Plugin 'othree/html5.vim'
 " SCSS syntax support
 Plugin 'cakebaker/scss-syntax.vim'
+" vim-tmux navigation keys
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
