@@ -97,6 +97,10 @@ fi
 autoload -U promptinit; promptinit
 prompt pure
 
+# Activate vi mode
+bindkey -v
+KEYTIMEOUT=1
+
 # Run tmux automatically
 #if command -v tmux>/dev/null; then
 #  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
