@@ -112,6 +112,7 @@ eval "$(dircolors ~/.dircolors)";
 # Aliases
 alias xcopy="xclip -selection clipboard"
 alias docker="nvidia-docker"
+alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
 
 onChange() {
   while inotifywait -e close_write,moved_to,create .
