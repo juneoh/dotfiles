@@ -50,6 +50,8 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 " Vim-tmux integration
 Plugin 'benmills/vimux'
+" Python AutoComplete
+Plugin 'rkulla/pydiction'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -186,3 +188,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
