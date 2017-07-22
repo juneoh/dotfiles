@@ -25,8 +25,6 @@ Plugin 'nvie/vim-flake8'
 " Airline tabs
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-" Buffer line
-Plugin 'bling/vim-bufferline'
 " Git Gutter
 Plugin 'airblade/vim-gitgutter'
 " VIM Markdown
@@ -52,6 +50,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'benmills/vimux'
 " Python AutoComplete
 Plugin 'rkulla/pydiction'
+" Kill buffer without losing split
+Plugin 'qpkorr/vim-bufkill'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -115,9 +115,6 @@ syntax on
 " Make VIM respond faster
 set updatetime=250
 
-" Make line numbers always visible
-set number
-
 " Enable airlne by default.
 set laststatus=2
 
@@ -147,8 +144,8 @@ let g:airline#extensions#whitespace#enabled = 0
 
 " Enable buffer tabs
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#fnamecollapse = 1
 nmap 1 <Plug>AirlineSelectTab1
