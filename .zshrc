@@ -87,6 +87,9 @@ source $ZSH/oh-my-zsh.sh
 # Load local profile
 source $HOME/.profile
 
+# Load /etc/profile manually to counter https://bugzilla.redhat.com/show_bug.cgi?id=88457
+source /etc/profile
+
 # Activate Pure theme
 ZSH_THEME=""
 fpath=( "$HOME/.zsh-pure" $fpath )
