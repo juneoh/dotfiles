@@ -52,8 +52,6 @@ Plugin 'benmills/vimux'
 Plugin 'rkulla/pydiction'
 " Kill buffer without losing split
 Plugin 'qpkorr/vim-bufkill'
-" Navigate through camelcase and underscores
-Plugin 'bkad/CamelCaseMotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -189,13 +187,3 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
-
-" Use camelcasemotion
-map <silent> w <Plug>CamelCaseMotion_w
-map <silent> b <Plug>CamelCaseMotion_b
-map <silent> e <Plug>CamelCaseMotion_e
-map <silent> ge <Plug>CamelCaseMotion_ge
-sunmap w
-sunmap b
-sunmap e
-sunmap ge
