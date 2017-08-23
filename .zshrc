@@ -118,6 +118,7 @@ alias docker="nvidia-docker"
 alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
 alias t6="tmux new-session \; split-window -h \; split-window -h \; \
   select-layout even-horizontal \; split-window -v -t 1 \; split-window -v -t 2\; split-window -v -t 3"
+alias tmux="tmux -u"
 
 onChange() {
   while inotifywait -e close_write,moved_to,create .
