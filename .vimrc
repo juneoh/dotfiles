@@ -113,7 +113,7 @@ let python_highlight_all=1
 syntax on
 
 " Make VIM respond faster
-set updatetime=250
+" set updatetime=250
 
 " Enable airlne by default.
 set laststatus=2
