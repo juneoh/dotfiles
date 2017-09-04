@@ -112,6 +112,10 @@ KEYTIMEOUT=1
 # Set dircolors
 eval "$(dircolors ~/.dircolors)";
 
+# Set command line shortcuts
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+
 # Aliases
 alias xcopy="xclip -selection clipboard"
 alias docker="nvidia-docker"
