@@ -157,7 +157,7 @@ nmap 6 <Plug>AirlineSelectTab6
 nmap 7 <Plug>AirlineSelectTab7
 nmap 8 <Plug>AirlineSelectTab8
 nmap 9 <Plug>AirlineSelectTab9
-nmap leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
 
 " Customize Promptline
