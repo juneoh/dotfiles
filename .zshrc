@@ -7,7 +7,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -117,15 +117,15 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
 # Aliases
-alias xcopy="xclip -selection clipboard"
-alias docker="nvidia-docker"
-alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
-alias t4="tmux new-session \; split-window -h \;  split-window -v -t 1 \; \
-  split-window -v -t 2"
-alias t6="tmux new-session \; split-window -h \; split-window -h \; \
-  select-layout even-horizontal \; split-window -v -t 1 \; \
-  split-window -v -t 2\; split-window -v -t 3"
-alias tmux="tmux -u"
+#alias xcopy="xclip -selection clipboard"
+#alias docker="nvidia-docker"
+#alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
+#alias t4="tmux new-session \; split-window -h \;  split-window -v -t 1 \; \
+#  split-window -v -t 2"
+#alias t6="tmux new-session \; split-window -h \; split-window -h \; \
+#  select-layout even-horizontal \; split-window -v -t 1 \; \
+#  split-window -v -t 2\; split-window -v -t 3"
+#alias tmux="tmux -u"
 
 onChange() {
   while inotifywait -e close_write,moved_to,create .
