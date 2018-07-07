@@ -1,12 +1,13 @@
 FROM ubuntu:18.04
 
-WORKDIR /root
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
         sudo \
+        less \
         zsh \
         build-essential \
         cmake \
+        libltdl7 \
+        libltdl-dev \
         git \
         curl \
         wget \
@@ -15,27 +16,30 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         ssh \
         ca-certificates \
         python3-pip \
+        python3-dev \
         nodejs \
-        npm
+        npm && \
+        rm -rf /var/lib/apt/lists/*
+
+RUN groupadd -g 1000 june
+RUN useradd -u 1000 -g 1000 -m -s /usr/bin/zsh june
+RUN usermod -aG sudo june
+RUN echo "june ALL=NOPASSWD: ALL" >> /etc/sudoers
+USER june
+WORKDIR /home/june
 
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
-RUN git clone https://github.com/sindresorhus/pure .zsh-pure && \
-    cd .zsh-pure && \
-    ln -s "$PWD/pure.zsh" /usr/local/share/zsh/site-functions/prompt_pure_setup && \
-    ln -s "$PWD/async.zsh" /usr/local/share/zsh/site-functions/async
+RUN git clone https://github.com/sindresorhus/pure .zsh-pure
 
-COPY . /root
+COPY . /home/june
+
 RUN git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 RUN vi +PluginInstall +qall
 
-RUN npm install -g eslint
-RUN npm install -g babel-eslint eslint-plugin-react
-RUN pip3 install -U pip setuptools
+RUN pip3 install setuptools
 RUN pip3 install pylint pyflakes
-
-RUN mkdir /workspace
 
 ENV TERM xterm-256color
 ENV SHELL zsh
-WORKDIR /workspace
-ENTRYPOINT /usr/bin/zsh
+WORKDIR /home/june/workspace
+ENTRYPOINT sh

@@ -14,8 +14,8 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 
-" VIM-One color scheme
-Plugin 'https://github.com/rakr/vim-one.git'
+" Onedark color scheme
+Plugin 'joshdick/onedark.vim'
 " Auto-indentation for Python
 Plugin 'vim-scripts/indentpython.vim'
 " PEP8 style check
@@ -102,7 +102,7 @@ let g:airline_theme='onedark'
 "if (has("termguicolors"))
 "  set termguicolors
 "endif
-colorscheme onedark
+silent! colorscheme onedark
 
 " Tmux support
 "set t_8b=^[[48;2;%lu;%lu;%lum
