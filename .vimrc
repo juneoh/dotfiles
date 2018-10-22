@@ -14,12 +14,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 
-" VIM-One color scheme
-Plugin 'https://github.com/rakr/vim-one.git'
+" Onedark color scheme
+Plugin 'joshdick/onedark.vim'
 " Auto-indentation for Python
 Plugin 'vim-scripts/indentpython.vim'
-" Asynchronous linting
-Plugin 'w0rp/ale'
 " Autocomplete with tab
 Plugin 'ervandew/supertab'
 " PEP8 style check
@@ -39,9 +37,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " File tree
 Plugin 'scrooloose/nerdtree'
 " ES6 highlighting support
-Plugin 'https://github.com/pangloss/vim-javascript.git'
-" Promptline
-Plugin 'edkolev/promptline.vim'
+Plugin 'pangloss/vim-javascript.git'
 " HTML5 indentation and syntax
 Plugin 'othree/html5.vim'
 " SCSS syntax support
@@ -54,6 +50,10 @@ Plugin 'benmills/vimux'
 Plugin 'rkulla/pydiction'
 " Kill buffer without losing split
 Plugin 'qpkorr/vim-bufkill'
+" JSX highlighting
+Plugin 'mxw/vim-jsx'
+" Syntax checking
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -104,7 +104,7 @@ let g:airline_theme='onedark'
 "if (has("termguicolors"))
 "  set termguicolors
 "endif
-colorscheme onedark
+silent! colorscheme onedark
 
 " Tmux support
 "set t_8b=^[[48;2;%lu;%lu;%lum
@@ -162,12 +162,6 @@ nmap 9 <Plug>AirlineSelectTab9
 nmap <leader>- <Plug>AirlineSelectPrevTab
 nmap <leader>+ <Plug>AirlineSelectNextTab
 
-" Customize Promptline
-let g:promptline_preset = {
-  \'b' : [ promptline#slices#user() ],
-  \'c' : [ promptline#slices#cwd({ 'dir_limit': 2 }) ],
-  \'y' : [ promptline#slices#vcs_branch() ]}
-
 " Easier split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -178,15 +172,8 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
-" Syntastic recommended settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_python_python_exec = 'python3'
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
 let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
+
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0
