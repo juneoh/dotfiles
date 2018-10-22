@@ -18,8 +18,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'https://github.com/rakr/vim-one.git'
 " Auto-indentation for Python
 Plugin 'vim-scripts/indentpython.vim'
-" Check syntax on save
-Plugin 'scrooloose/syntastic'
+" Asynchronous linting
+Plugin 'w0rp/ale'
+" Autocomplete with tab
+Plugin 'ervandew/supertab'
 " PEP8 style check
 Plugin 'nvie/vim-flake8'
 " Airline tabs
