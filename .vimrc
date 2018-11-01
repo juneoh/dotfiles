@@ -46,8 +46,6 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 " Vim-tmux integration
 Plugin 'benmills/vimux'
-" Python AutoComplete
-Plugin 'rkulla/pydiction'
 " Kill buffer without losing split
 Plugin 'qpkorr/vim-bufkill'
 " JSX highlighting
@@ -171,8 +169,6 @@ nnoremap <C-H> <C-W><C-H>
 " More natural split opening
 set splitbelow
 set splitright
-
-let g:pydiction_location = '~/.vim/bundle/pydiction/complete-dict'
 
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
