@@ -15,7 +15,7 @@ lightYellow = yellow; // yellow
 lightBlue   = blue; // blue
 lightMagenta= magenta; // pink
 lightCyan   = cyan; // cyan
-lightWhite  = "eff0eb"; // white
+lightWhite  = "#eff0eb"; // white
 
 t.prefs_.set('color-palette-overrides',
                    [ black , red     , green  , yellow,
@@ -26,4 +26,4 @@ t.prefs_.set('color-palette-overrides',
 t.prefs_.set('cursor-color', lightWhite);
 t.prefs_.set('foreground-color', lightWhite);
 t.prefs_.set('background-color', black);
-t.prefs_.set('cursor-blink', true);
+//t.prefs_.set('cursor-blink', true);
