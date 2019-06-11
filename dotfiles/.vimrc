@@ -173,3 +173,11 @@ set splitright
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0
+
+" CVE-2019-12735
+set nomodeline
+if !has('patch-8.1.1365')
+  augroup disable_modeline
+    autocmd BufReadPre * set nomodeline
+  augroup END
+endif
