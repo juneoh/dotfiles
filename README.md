@@ -1,6 +1,6 @@
-# home
+# Dotfiles
 
-Personal environment settings for Ubuntu.
+Personal dotfiles.
 
 - terminal multiplexer: tmux
   - color scheme: custom adaptation of hyper-snazzy
@@ -10,29 +10,34 @@ Personal environment settings for Ubuntu.
 - editor: VIM
   - plugin manager: [Vundle](https://github.com/VundleVim/Vundle.vim)
   - plugins: refer to `.vimrc` file.
-- recommended
+- cosmetics
   - color scheme: [hyper-snazzy](https://github.com/sindresorhus/hyper-snazzy)
   - fonts: [Menlo for Powerline](https://github.com/abertsch/Menlo-for-Powerline)
 
 ## Installation
 
-### 1. Prepare home directory
+### 1. Install necessary packages
 
-The settings in `.config/user-dirs.dirs` file will require the following modifications
-to the home directory:
-
-- Changing the user directory names to lowercase
-- Merging `Music` and `Video` directory to `media`
-
-If you wish not to make such change, keep an original copy of your `user-dirs.dirs` file
-and revert back after installing the settings in this repository.
-
-### 2. Run the install script
-
-**WARNING:** The following script will overwrite your home directory with the files of
-this repository. Make sure to keep backups to your previous settings if necessary.
-
-```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/juneoh/dotfiles/install/install.sh)"
+```bash
+sudo apt-get update &&  sudo apt-get install git zsh vim tmux stow
 ```
 
+### 2. Install oh-my-zsh
+
+https://github.com/robbyrussell/oh-my-zsh
+
+### 3. Clone this repository and create links.
+
+```bash
+cd
+git clone --recursive https://github.com/juneoh/dotfiles .dotfiles
+cd .dotfiles
+stow dotfiles
+```
+
+### 4. Install vim plugins.
+
+```bash
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vi +PluginInstall +qall
+```
