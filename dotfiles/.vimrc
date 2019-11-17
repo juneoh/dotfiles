@@ -52,6 +52,10 @@ Plugin 'qpkorr/vim-bufkill'
 Plugin 'mxw/vim-jsx'
 " Syntax checking
 Plugin 'w0rp/ale'
+" TS highlighting
+Plugin 'leafgarland/typescript-vim'
+" HTML autoclose
+Plugin 'alvan/vim-closetag'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -173,6 +177,10 @@ set splitright
 let g:ale_sign_error = '●'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tsserver', 'tslint']
+\}
 
 " CVE-2019-12735
 set nomodeline
