@@ -189,3 +189,5 @@ if !has('patch-8.1.1365')
     autocmd BufReadPre * set nomodeline
   augroup END
 endif
+
+set backspace=indent,eol,start
