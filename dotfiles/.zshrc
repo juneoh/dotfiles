@@ -51,7 +51,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,7 +89,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Load local profile
-source $HOME/.profile
+#source $HOME/.profile
 
 # Load /etc/profile manually to counter https://bugzilla.redhat.com/show_bug.cgi?id=88457
 source /etc/profile
@@ -110,7 +114,7 @@ KEYTIMEOUT=1
 #fi
 
 # Set dircolors
-eval "$(dircolors ~/.dircolors)";
+#eval "$(dircolors ~/.dircolors)";
 
 # Set command line shortcuts
 bindkey '^A' beginning-of-line
@@ -118,7 +122,7 @@ bindkey '^E' end-of-line
 
 # Aliases
 alias xcopy="xclip -selection clipboard"
-alias docker="nvidia-docker"
+#alias docker="nvidia-docker"
 alias youtube-dl="youtube-dl -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4'"
 alias t4="tmux new-session \; split-window -h \;  split-window -v -t 1 \; \
   split-window -v -t 2"
@@ -147,3 +151,6 @@ fi
 unset __conda_setup
 
 PS1="$(echo $PS1 | sed 's/(base) //')"
+export LC_ALL=en_US.UTF-8
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
