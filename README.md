@@ -30,7 +30,7 @@ https://github.com/robbyrussell/oh-my-zsh
 
 ```bash
 cd
-git clone --recursive https://github.com/juneoh/dotfiles .dotfiles
+git clone https://github.com/juneoh/dotfiles --recursive --depth 1 --branch develop .dotfiles
 cd .dotfiles
 stow dotfiles
 ```
@@ -40,4 +40,10 @@ stow dotfiles
 ```bash
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vi +PluginInstall +qall
+```
+
+### 5. Install Python packages
+
+```bash
+pip install flake8 pylint
 ```
