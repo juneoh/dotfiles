@@ -88,12 +88,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Load local profile
-#source $HOME/.profile
-
-# Load /etc/profile manually to counter https://bugzilla.redhat.com/show_bug.cgi?id=88457
-source /etc/profile
-
 # Activate Pure theme
 ZSH_THEME=""
 fpath=( "$HOME/.zsh-pure" $fpath )
@@ -138,19 +132,22 @@ onChange() {
   done
 }
 
-__conda_setup="$('~/.conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "~/.conda/etc/profile.d/conda.sh" ]; then
-        . "~/.conda/etc/profile.d/conda.sh"
-    else
-        export PATH="$HOME/.conda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-PS1="$(echo $PS1 | sed 's/(base) //')"
 export LC_ALL=en_US.UTF-8
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/june/.conda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/june/.conda/etc/profile.d/conda.sh" ]; then
+        . "/Users/june/.conda/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/june/.conda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
