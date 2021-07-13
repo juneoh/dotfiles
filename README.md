@@ -17,6 +17,5 @@ Personal dotfiles.
 ## Installation
 
 ```bash
-sh -c "$(curl -fsSL
-https://raw.githubusercontent.com/juneoh/dotfiles/develop/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/juneoh/dotfiles/develop/install.sh)"
 ```
