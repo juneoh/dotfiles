@@ -16,34 +16,7 @@ Personal dotfiles.
 
 ## Installation
 
-### 1. Install necessary packages
-
 ```bash
-sudo apt-get update &&  sudo apt-get install git zsh vim tmux stow
-```
-
-### 2. Install oh-my-zsh
-
-https://github.com/robbyrussell/oh-my-zsh
-
-### 3. Clone this repository and create links.
-
-```bash
-cd
-git clone https://github.com/juneoh/dotfiles --recursive --depth 1 --branch develop .dotfiles
-cd .dotfiles
-stow dotfiles
-```
-
-### 4. Install vim plugins.
-
-```bash
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vi +PluginInstall +qall
-```
-
-### 5. Install Python packages
-
-```bash
-pip install flake8 pylint
+sh -c "$(curl -fsSL
+https://raw.githubusercontent.com/juneoh/dotfiles/develop/install.sh)"
 ```
