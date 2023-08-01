@@ -88,6 +88,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export VIRTUAL_ENV_DISABLE_PROMPT=12
+
 # Activate Pure theme
 ZSH_THEME=""
 fpath=( "$HOME/.zsh-pure" $fpath )

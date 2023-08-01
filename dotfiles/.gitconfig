@@ -9,3 +9,8 @@
 	name = June Oh
 [push]
 	default = simple
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[url "https://"]
+	insteadOf = git://
