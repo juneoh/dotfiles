@@ -96,18 +96,6 @@ au BufNewFile,BufRead *.py
 " UTF-8
 set encoding=utf-8
 
-" Enable Airline theme
-let g:airline_theme='onedark'
-
-" Enable color scheme with true color support
-"if (has("nvim"))
-"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-"endif
-"if (has("termguicolors"))
-"  set termguicolors
-"endif
-silent! colorscheme onedark
-
 " Tmux support
 "set t_8b=^[[48;2;%lu;%lu;%lum
 "set t_8f=^[[38;2;%lu;%lu;%lum
@@ -115,6 +103,19 @@ silent! colorscheme onedark
 " Make the code pretty
 let python_highlight_all=1
 syntax on
+
+" Enable Airline theme
+let g:airline_theme='onedark'
+
+" Enable color scheme with true color support
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if (has("termguicolors"))
+  set termguicolors
+endif
+colorscheme onedark
+hi Normal guibg=NONE ctermbg=NONE
 
 " Make VIM respond faster
 " set updatetime=250
