@@ -105,7 +105,7 @@ autoload -U promptinit; promptinit
 prompt pure
 
 # Activate vi mode
-bindkey -v
+#bindkey -v
 KEYTIMEOUT=1
 
 # Run tmux automatically
@@ -142,18 +142,23 @@ export LC_ALL=en_US.UTF-8
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/june/.conda/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/june/.conda/etc/profile.d/conda.sh" ]; then
-        . "/Users/june/.conda/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/june/.conda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+export DOCKER_HOST=unix:///run/user/1002/docker.sock
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+SSH_AUTH_SOCK=$HOME/.ssh/ssh_auth_sock
+export PATH="/home/juneoh/.local/bin:$PATH"
+
+import_aws_tokens() {
+  JSON_BASEPATH="${HOME}/.aws/cli/cache"
+
+  json_file=$(ls -tr "${JSON_BASEPATH}" | tail -n1)
+
+  aws sts get-caller-identity --profile $AWS_PROFILE > /dev/null
+
+  export AWS_ACCESS_KEY_ID=$(cat ${JSON_BASEPATH}/${json_file} | jq -r '.Credentials.AccessKeyId')
+  export AWS_SECRET_ACCESS_KEY=$(cat ${JSON_BASEPATH}/${json_file} | jq -r '.Credentials.SecretAccessKey')
+  export AWS_SESSION_TOKEN=$(cat ${JSON_BASEPATH}/${json_file} | jq -r '.Credentials.SessionToken')
+}

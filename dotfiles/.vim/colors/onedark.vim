@@ -129,7 +129,7 @@ let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16": "7" }
 let s:black = { "gui": "#282C34", "cterm": "235", "cterm16": "0" }
 let s:visual_black = { "gui": "NONE", "cterm": "NONE", "cterm16": s:black.cterm16 } " Black out selected text in 16-color visual mode
 
-let s:comment_grey = { "gui": "#5C6370", "cterm": "59", "cterm16": "15" }
+let s:comment_grey = { "gui": "#7A7979", "cterm": "59", "cterm16": "15" }
 let s:gutter_fg_grey = { "gui": "#636D83", "cterm": "238", "cterm16": "15" }
 let s:cursor_grey = { "gui": "#2C323C", "cterm": "236", "cterm16": "8" }
 let s:visual_grey = { "gui": "#3E4452", "cterm": "237", "cterm16": "15" }

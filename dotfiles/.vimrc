@@ -96,10 +96,6 @@ au BufNewFile,BufRead *.py
 " UTF-8
 set encoding=utf-8
 
-" Tmux support
-"set t_8b=^[[48;2;%lu;%lu;%lum
-"set t_8f=^[[38;2;%lu;%lu;%lum
-
 " Make the code pretty
 let python_highlight_all=1
 syntax on
@@ -108,14 +104,19 @@ syntax on
 let g:airline_theme='onedark'
 
 " Enable color scheme with true color support
-if (has("nvim"))
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-endif
+"if (has("nvim"))
+"  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"endif
 if (has("termguicolors"))
   set termguicolors
 endif
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme onedark
-hi Normal guibg=NONE ctermbg=NONE
+
+" Tmux support
+"set t_8b=^[[48;2;%lu;%lu;%lum
+"set t_8f=^[[38;2;%lu;%lu;%lum
 
 " Make VIM respond faster
 " set updatetime=250
@@ -124,7 +125,7 @@ hi Normal guibg=NONE ctermbg=NONE
 set laststatus=2
 
 " Enable background transparency.
-hi Normal ctermbg=none
+hi Normal guibg=NONE ctermbg=NONE
 
 " Disable markdown folding
 let g:vim_markdown_folding_disabled = 1
@@ -180,7 +181,8 @@ let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tsserver', 'tslint']
+\   'typescript': ['tsserver', 'tslint'],
+\   'python': ['pylint']
 \}
 
 " CVE-2019-12735
